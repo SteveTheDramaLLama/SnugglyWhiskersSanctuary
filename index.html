@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type ="text/css" href="style.css">
+    <link rel="stylesheet" type ="text/css" href="reused.css">
+    <script src="script.js"></script>
+
+    <title> Home Page </title>
+</head>
+<body>
+    <div class="align">
+    <!-- NAVIGATION -->
+        <div id="main-nav" class="nav">
+            <div class="align-logo">
+                <img id="logo" src="SnugglyWhiskers.png" style="max-width: 10%; position:static;" alt = "Logo">
+                <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Snuggly Whisker's Sanctuary</a></h1>
+            </div>
+            <div class="nav-content">
+                <a href="./index.html">  Home </a>
+                <a href="./about.html"> About </a>
+                <a href="./campaigns.html"> Campaigns </a>
+                <a href="./contact.html"> Contact </a>
+                <a href="./donate.html" class="donate-link"> <b> Donate </b> </a>
+            </div>
+        </div>
+
+        <!-- Side navigation for when page shrinks -->
+        <div class="sidebar">
+            <button class="toggle-content">&#9776;</button>
+            <div class="content">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./campaigns.html">Campaigns</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./donate.html">Donate</a>
+            </div>
+        </div>
+    </div>
+
+    <div class = "contain-head">
+        <div class="background-image"> </div>
+    </div>  
+
+    <div class="Front-Page-div">
+        <div class="Front-Page-Content">
+            <h2>Welcome!</h2>
+            <p>Welcome to Snuggly Whisker's Sanctuary, where every feline friend is embraced with open arms to find their purr-fect forever home.</p>
+        </div>
+    </div>
+
+    <!-- Styling for smaller scaling -->
+
+    <div class="catcolumnimage">
+        <img src="https://img.freepik.com/free-photo/gold-bengal-cat-white-space_155003-12732.jpg?t=st=1715159692~exp=1715163292~hmac=2e8f45aa1d11432e7c79d1864505d75d95af257537eb9060f88a635ed18af67f&w=826" alt = "bengal cat image">
+        <div class="catintro-overlay">
+            <h2 style = "font-size: 50px;">Meet The Whiskers!</h2>
+            <p style = "font-size: 20px;">Meet our current felines searching for their forever home. When choosing your partner, please consider the needs of each individual cat, so that we can provide the best homes possible for our fluffy friends!</p>
+        </div>
+    </div>
+
+        <!-- Identify Cats for Popup displays -->
+    <div class="cat-popup" id="catPopup" style="display: none;">
+        <img id="catImage" alt = "image of cat">
+        <h2 id="catName">Name: </h2>
+        <p id="catDescription"></p>
+        <button id="closePopupBtn">Close</button>
+    </div>
+    <div class="overlay" id="overlay" style="display: none;"></div>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Event listener for catbox elements
+            document.querySelectorAll('.catbox').forEach(item => {
+                item.addEventListener('click', event => {
+                    const catName = item.dataset.name;
+                    const catDescription = item.dataset.description;
+                    const catImage = item.dataset.image;
+
+                    // Retrieve dataset
+                    document.getElementById('catName').innerText = catName;
+                    document.getElementById('catDescription').innerText = catDescription;
+                    document.getElementById('catImage').src = catImage;
+
+                    // Display the catPopup
+                    document.getElementById('catPopup').style.display = 'block';
+                    document.getElementById('overlay').style.display = 'block';
+                });
+            });
+
+            document.getElementById('closePopupBtn').addEventListener('click', () => {
+                document.getElementById('catPopup').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            });
+        });
+    </script>
+
+
+    <!-- Displaying catboxes -->
+    <div class="catboxgroup">
+        <div class="catboxgrid">
+            <!-- Data information for cat boxes -->
+            <div class="catbox" 
+                data-name="Piper" style = "text-align: center;"
+                data-description="Piper is known to be very gentle and patient with children, making her an ideal family pet. She also gets along well with other cats, often engaging in playful interactions with them. Piper is in good health and doesn't have any specific medical needs, but regular veterinary check-ups are recommended to ensure she remains happy and healthy."
+                data-image="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+                <img src="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "Fluffy black and grey cat">
+                <h2>Piper</h2>
+                <p>Piper is a playful and affectionate, elderly cat in search of their retirement home. She loves to curl up on laps and enjoys chasing after toy mice.</p>
+            </div>
+
+
+            <div class="catbox" 
+            data-name="Mittens"
+            data-description="
+            As a young, healthy adult cat in search of her forever home, Mittens brings a playful energy and a curious spirit. She's always ready to explore new spaces and delights in discovering hidden nooks and crannies. Despite her outgoing nature, Mittens has a preference for being the sole feline queen of her domain. She thrives in an environment where she can reign supreme and receive undivided attention from her human companions."
+            data-image="https://images.unsplash.com/photo-1605571925159-5daac7d310f0?q=80&w=1506&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1605571925159-5daac7d310f0?q=80&w=1506&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "short haired tabby ginger cat" >
+                <h2> Mittens </h2>
+                <p> Meet Mittens; a playful, affectionate and curious feline with a personality as striking as her coat, awaiting a chance to find her forever home. </p>
+            </div>
+
+            <div class="catbox" 
+            data-name="Cheesepuff"
+            data-description="As an overweight, patient cat, Cheesepuff carries her extra fluff with pride, embodying the epitome of contentment in every lazy stretch and leisurely saunter. Her round, adorably pudgy cheeks add to her appeal, making her a beloved companion to all who meet her. Cheesepuff's favorite pastime is indulging in the art of sleep. She is patient with children, and incredibly friendly to all that meet her."
+            data-image="https://images.unsplash.com/photo-1526674183561-4bfb419ab4e5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1526674183561-4bfb419ab4e5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "Fluffy, overweight ginger and white cat">
+                <h2> Cheesepuff </h2>
+                <p> Introducing Cheesepuff, her striking, fluffy, orange coat being where she got her name.the charmingly plump feline with a passion for relaxation and all things cozy. 
+                </p>
+            </div>
+
+            <div class="catbox" 
+            data-name="Morris"
+            data-description="Morris embodies the true essence of a companion, offering unwavering loyalty and unconditional love to his human companions. Whether he's curled up in your lap for a cozy cuddle session or keeping you company with his playful antics, Morris is always by your side, ready to brighten your day with his infectious personality and boundless affection."
+            data-image="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "Short haired, ginger and white cat with smaller ears">
+                <h2> Morris </h2>
+                <p> Meet Morris, the epitome of feline charm and charisma. With his striking orange and white coat reminiscent of a vibrant sunset, Morris captivates hearts with his undeniable allure and zesty personality. </p>
+            </div>
+
+            <div class="catbox" 
+            data-name="Jasper and Willow"
+            data-description="Jasper, with his bold tabby markings and playful demeanor, is the epitome of adventurous spirit. He's always the first to explore new territories. Whether he's chasing after toy mice or scaling lofty heights, Jasper approaches every moment with boundless enthusiasm and unbridled joy.
+
+            Willow, with her gentle disposition and serene gaze, is the calming presence that grounds their dynamic duo. Willow finds solace in quiet moments spent basking in sunbeams or curling up in a cozy nook, her soothing presence bringing comfort to those around her."
+            data-image="https://images.unsplash.com/photo-1616513842455-e05584b1145c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1616513842455-e05584b1145c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "2 brown tabby cats cuddling one another">
+                <h2> Jasper and Willow </h2>
+                <p> Jasper and Willow are a completely healthy and unceperable duo that long for a forever home where they can continue their journey together, side by side, through life's adventures and uncertainties.  </p>
+            </div>
+
+            <div class="catbox" 
+            data-name="Pepper"
+            data-description="Despite the challenges she faces, Pepper refuses to let her condition define her. With the support of dedicated veterinary care, she manages her diabetes with diligence. From carefully monitored meals to regular insulin injections, Pepper embraces her treatment regimen with stoicism and unwavering determination. Due to her medical needs, Pepper requires an attentive owner."
+            data-image="https://images.unsplash.com/photo-1590563792383-22ecfeb96a1e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3">
+                <img src="https://images.unsplash.com/photo-1590563792383-22ecfeb96a1e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt = "A black cat with green eyes">
+                <h2> Pepper </h2>
+                <p> Meet Pepper, the resilient feline with a heart as strong as her spirit. Pepper faces life with unwavering determination, despite battling with feline diabetes. She navigates each day with courage, inspiring all who know her with her resilience and perseverance. </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Donate section -->
+    <div class="donate">
+        <div class = "donate-column">
+            <h3 style = "font-size: 50px;"> Can't Adopt? </h3>
+            <P style = "font-size: 20px;"> Consider Donating! We rely on your generosity to ensure all of our whiskered palls are both happy and healthy. Even the smallest donation can make a big difference. </P>
+            <button type="button" name="Donate-btn" onclick="window.location.href='./donate.html';">DONATE</button>
+        </div>
+
+        <img src = "https://img.freepik.com/free-photo/closeup-shot-beautiful-ginger-domestic-kitten-sitting-white-surface_181624-35913.jpg?t=st=1715172694~exp=1715176294~hmac=e07a3e12b9e7b0ac93c0c8260573148bd2ea75d3f8879e0d03cd2c74ed8cdafc&w=740" alt = "ginger and white kitten">
+    </div>
+    
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="group">
+            <div class="footer-col">
+                <h3><a href="about.html">About Us</a></h3>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="about.html">Our Campaigns</a></li>
+                    <li><a href="about.html">Our History</a></li>
+                </ul>
+
+            </div>
+            <div class="Contact Us">
+                <h3><a href="contact.html">Contact Us</a></h3>
+                <ul>
+                    <li>+1 (555) 123-4567</li>
+                    <li>info@snugglywhiskerssanctuary.org</li>
+                    <li>42 Acacia Avenue
+                        London
+                        SE1 2AB
+                        United Kingdom </li>
+                </ul>
+
+            </div>
+            <div class="footer-col">
+                <h3>Other</h3>
+                <ul>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="policy.html">Adoption Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="socials">
+            <h3> Socials </h3>
+            <a href="https://www.facebook.com"><img class="facebook" src="icons8-facebook-48.png" alt = "facebook icon"></a>
+            <a href="https://www.instagram.com"><img class="insta" src="icons8-instagram-48.png" alt = "insagram icon"></a>
+            <a href="https://twitter.com"><img class="twitter" src="icons8-twitter-48.png" alt = "twitter icon" ></a>
+        </div>
+        
+        <hr>
+        <p class="copyright">Copyright 2024</p>
+    </div>
+
+</body>
+</html>

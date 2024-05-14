@@ -1,0 +1,265 @@
+body {
+    font-family: "Caveat", cursive, sans-serif;
+}
+
+.align-logo {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.align-logo h1 {
+    display: flex;
+    margin: 0; 
+    font-size: 20px;
+    color: white;
+    padding-left: 1%;
+    width: 100%;
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #B2967D;
+    top: 0;
+    position: fixed;
+    z-index: 10; 
+    width: 100%;
+}
+
+
+
+.nav-content a {
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 8%;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px; 
+}
+
+.nav a.donate-link {
+    font-size: 20px; 
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    width: 90%;
+}
+
+.sidebar {
+    top: 0;
+    overflow-x: hidden;
+}
+
+.sidebar .content {
+    background-color: #B2967D;
+    position: absolute;
+    min-width: 100px;
+    display: none;
+}
+
+.sidebar.show-content .content { 
+    display: block;
+}
+
+.sidebar a {
+    background-color: #B2967D;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #775c44;
+}
+
+.sidebar button {
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+}
+
+@media screen and (min-width: 810px) {
+    .sidebar,
+    .sidebar button {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .sidebar button {
+        padding-top: 2%;
+        display: block;
+    }
+
+    .nav {
+        display: none;
+    }
+}
+
+
+
+
+.h3 a {
+    text-decoration: none;
+}
+
+.footer {
+    margin-top: 0; 
+    background-color: #B2967D;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    line-height: 2;
+    font-size: 15px;
+}
+
+ul li {
+    text-align: left;
+    list-style:inside;
+}
+
+ul li a,
+h3 a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.group {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 30%; 
+}
+
+.footer-col h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-col h3 a {
+    text-decoration: none;
+}
+
+.footer-col ul {
+    list-style-type: none;
+    text-align: left;
+    text-decoration: none;
+    padding-left: 10%;
+}
+
+.footer-col ul li {
+    margin-bottom: 5px;
+    text-align: left;
+    text-align: left;
+}
+
+hr {
+    border-top: 1px solid white;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.copyright {
+    color: white;
+}
+
+.facebook:hover,
+.insta:hover,
+.twitter:hover  {
+    cursor: pointer;
+}
+
+
+button[name="Donate-btn"] {
+    margin-top: 10%;
+    background-color: #E91E63;
+    color: white;
+    padding: 15px 30px; 
+    border: none;
+    cursor: pointer;
+    display: block;  
+    font-size: 20px;
+    border-radius: 15%;
+    transition: background-color 0.3s;
+}
+
+.donate button:hover {
+    background-color: #ff68af;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.donate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.donate h3 {
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.donate img {
+    max-width: 50%;
+}
+
+.donate-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 30%;
+}
+
+@media (max-width: 768px) {
+
+    .donate {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .donate-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 70%;
+    }
+}

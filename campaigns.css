@@ -1,0 +1,183 @@
+html, body {
+    margin: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #EEE4E1;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.background-image {
+    background-image: url("https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+}
+
+.campaign {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: absolute;
+    top: 30%;
+    width: 30%;
+    left: 5%;
+    color: #ECF8F8;
+}
+
+.Campaign-Quote-Heading {
+    color:white;
+    align-items: left;
+}
+
+.campaign h2 {
+    font-size: 50px;
+}
+.campaign-quote {
+    color: white;
+}
+
+
+.Campaigns-Subheading {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #B2967D;
+    color: white;
+    z-index: +1;
+}
+
+.Campaign-Title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0; 
+    position: relative; 
+}
+
+.Triangle-Down {
+    position: absolute;
+    bottom: -45px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid #B2967D;
+    z-index: 1; 
+}
+
+
+.Campaigns-List {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    z-index: -1;
+    margin-top: 0;
+}
+
+.Campaign-Box {
+    display: flex;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    background-color: white;
+    z-index: -1;
+    position: relative; 
+    z-index: 0; 
+}
+
+
+.Campaign-Text-Box-Heading {
+    text-align: center;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.Campaign-Box-Text {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    font-size: 18px;
+}
+
+.Campaign-Box-Text-Group {
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.Campaign-Box-Image {
+    width: 50%;
+    height: 100%;
+    align-items: left;
+}
+
+.Campaign-Box-Image-2 {
+    width: 50%;
+    height: 100%;
+    align-items: right;
+    margin-left: auto;
+}
+
+.Campain-Donate-Box {
+    position: relative;
+}
+
+.campaign {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-20%, -20%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.Campaign-Donate-Box-Image {
+    background-image: url("https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    z-index: 0;
+}
+
+
+@media (max-width: 1168px) {
+    .Campaign-Box {
+        flex-direction: column; 
+    }
+
+    .Campaign-Box-Image,
+    .Campaign-Box-Image-2 {
+        width: 100%;
+    }
+
+    .Campaign-Box-Image-2{
+        order: -1;
+    }
+
+    .campaign {
+        margin-top: 0;
+    }
+
+    .campaign h2 {
+        line-height: 1;
+        margin-bottom: 0;
+    }
+}
